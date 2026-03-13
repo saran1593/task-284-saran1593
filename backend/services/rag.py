@@ -52,5 +52,6 @@ def output_response(result: str, question: str, query: str) -> str:
 def rag_pipeline(db:Session, question: str):
     sql = question_to_sql(question)
     formatedsql = format(sql)
+    ptint(formatedsql)
     result = run_query(db, formatedsql)
     return output_response(result, question, formatedsql)
